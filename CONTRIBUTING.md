@@ -49,5 +49,4 @@ Always write a clear log message for your commits. One-line messages are fine fo
   * So that we can consistently serve images from the CDN, always use image_path or image_tag when referring to images. Never prepend "/images/" when using image_path or image_tag.
   * Also for the CDN, always use cwd-relative paths rather than root-relative paths in image URLs in any CSS. So instead of url('/images/blah.gif'), use url('../images/blah.gif').
 
-Thanks,
-theekrystallee 2019
+Thanks!
