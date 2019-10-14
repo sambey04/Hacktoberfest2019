@@ -10,6 +10,5 @@ public class nsn{
 		demo obj=new demo();
 		Thread(t)=new Thread(obj);
 		t.start();
-	
 	}
 }
