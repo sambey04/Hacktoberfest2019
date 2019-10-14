@@ -1,5 +1,5 @@
-Codeforces: problem's  solution XOR and OR
-https://codeforces.com/contest/282/problem/C
+# Codeforces: problem's  solution XOR and OR
+# https://codeforces.com/contest/282/problem/C
 
 a = input()
 b = input()
