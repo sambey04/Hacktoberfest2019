@@ -1,5 +1,7 @@
+#A program that converts a decimal number to binary, octal or hexadecimal.
+
 keepGoing = 1
-while(keepGoing):
+while(keepGoing): #enter the loop while keepGoing = true (1);
     num = int(input("Type a decimal number: "))
     print('''Choose the base to which you wish to convert:
     [   2  ] Binary
