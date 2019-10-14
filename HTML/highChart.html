@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main4.css" />
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/series-label.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+
+</head>
+
+<body>
+    <div id="container">
+
+    </div>
+    <script>
+        var data1 = [];
+        var data2 = [];
+        var data3 = [];
+        var highcharts;
+        var initialDate = new Date();
+        var initial_date = +initialDate;
+        var f = '10';
+        //console.log(initial_date);
+        var z;
+        setInterval(() => {
+            function reqListener() {
+                z = JSON.parse(this.responseText);
+
+                data1.push([+(new Date()), z.bpi.USD.rate_float]);
+                data2.push([+(new Date()), z.bpi.EUR.rate_float]);
+                data3.push([+(new Date()), z.bpi.GBP.rate_float]);
+                
+                highcharts.series[0].setData(data1, false);
+                highcharts.series[1].setData(data2, false);
+                highcharts.series[2].setData(data3, false);
+                highcharts.redraw();
+
+            }
+            var o = new XMLHttpRequest();
+            o.addEventListener("load", reqListener);
+            o.open("GET", "https://api.coindesk.com/v1/bpi/currentprice.json");
+            o.send();
+        }, 1000);
+
+        window.addEventListener('load',function(){
+            renderHighCharts();
+            
+
+        })
+        function renderHighCharts() {
+            // console.log(data1);
+
+            highcharts = Highcharts.chart('container', {
+
+                title: {
+                    text: 'Comparison of bitcoin values in real time'
+                },
+
+                xAxis: {
+                    tickWidth: 0,
+                    type: 'datetime'
+                },
+                yAxis: {
+                    max: 10000,
+                    tickInterval: 200,
+                    lineColor: '#FF0000',
+                    lineWidth: 1,
+                    title: {
+                        text: 'Values'
+
+                    },
+                },
+                legend: {
+                    layout: 'vertical',
+                    align: 'right',
+                    verticalAlign: 'middle'
+                },
+
+                
+
+                series: [{
+                    name: 'USD',
+                    data: data1
+
+                }, {
+                    name: 'EURO',
+                    data: data2
+                }, {
+                    name: 'GBP',
+                    data: data3
+                }],
+
+                responsive: {
+                    rules: [{
+                        condition: {
+                            maxWidth: 500
+                        },
+                        chartOptions: {
+                            legend: {
+                                layout: 'horizontal',
+                                align: 'center',
+                                verticalAlign: 'bottom'
+                            }
+                        }
+                    }]
+                }
+
+            });
+        }
+    </script>
+</body>
+
+</html>
