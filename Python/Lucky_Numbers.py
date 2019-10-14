@@ -1,5 +1,5 @@
-Codeforces: solution of problem 630C
-https://codeforces.com/contest/630/problem/C
+# Codeforces: solution of problem 630C
+# https://codeforces.com/contest/630/problem/C
 
 n=int(input())
 sum=0
