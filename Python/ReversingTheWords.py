@@ -1,5 +1,7 @@
-#python_code
 
+#python_code
+#Given a string of words delimited by spaces, reverse the words in string. 
+#For example, given "hello world here", return "here world hello".
 b = []
 c = []
 
