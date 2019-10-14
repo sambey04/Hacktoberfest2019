@@ -6,7 +6,6 @@ public class nsp{
 				System.out.println("java is ");
 			}
 		};
-			t.start();
-	
+			t.start();	
 }
 }
