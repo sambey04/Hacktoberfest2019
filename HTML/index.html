@@ -1,0 +1,79 @@
+<!>
+
+<html>
+<head>
+
+<title> Education Overseas</title>
+
+<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900|Quicksand:400,700|Questrial" rel="stylesheet" />
+<link href="css/default.css" rel="stylesheet" type="text/css" media="all" />
+<link href="css/fonts.css" rel="stylesheet" type="text/css" media="all" />
+<link href="css/register.css" rel="stylesheet" type="text/css" media="all"/>
+
+</head>
+<body>
+<div id="header-wrapper">
+	<div id="header" class="container">
+		<div id="logo">
+        	<span class="icon icon-cog"></span>
+			<h1><a href="index.htm">Education Overseas</a></h1>
+		</div>
+		<div id="menu">
+			<ul>
+				<li class="active"><a href="index.html" accesskey="1" title="">Homepage</a></li>
+				<li ><a href="login.html" accesskey="2" title="">Login</a></li>
+				
+			</ul>
+		</div>
+	</div>
+</div>
+<div class="wrapper">
+	<div id="banner" class="container"><img src="images/banner.jpg" width="1200" height="500" alt="" /></div>
+	<div id="welcome" class="container">
+    	
+<div class="title">
+	  <h2>Welcome to Education Overseas</h2>
+		</div>
+		<p>This is <strong>Education Overseas</strong>, a free, functioning web-based application. It lets you search for a college or university ideal for your requirements and gives you lots of options to choose from. It's hassle-free and a lot less time taking than you doing the research required for each individual element you require.So you're pretty much free to search with whatever requirements you have and save a lot of time in research provided you give us credit for it. Have fun :) </p>
+	</div>
+	
+	<div>
+	<form action="register.php" method="POST">
+  <div class="container">
+    <h1>Register</h1>
+    <p>Please fill in this form to create an account.</p>
+    <hr>
+
+    <label for="email"><b>Email</b></label>
+    <input type="text" pattern="[a-zA-Z0-9.-_]{1,}@[a-zA-Z.-]{2,}[.]{1}[a-zA-Z]{2,}" placeholder="Enter Email" id="email" name="email" required>
+
+    <label for="password"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" id="password" name="password" required>
+
+    
+   
+	<label for="name"><b>Name</b></label>
+	<input type="text" placeholder="John Doe" id="name" name="name" required>
+	
+	<label for="phone"><b>Mobile</b></label>
+	<input type="text" placeholder="1234567890" id="phone" name="phone" required>
+	
+	<label for="city"><b>City</b><label>
+	<input type="text" placeholder="City" id="city" name="city" required>
+	<hr>
+	
+    <button type="submit" class="registerbtn">Register</button>
+  </div>
+
+  <div class="container signin">
+    <p>Already have an account? <a href="login.html">Sign in</a>.</p>
+  </div>
+</form>
+	</div>
+	
+</div>
+
+
+</body>
+</html>
+
