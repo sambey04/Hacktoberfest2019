@@ -1,0 +1,20 @@
+# Write a function that can extract the host name from a URL. The
+# host name is the part of the URL that comes after http:// but before
+# the next /. 
+
+import re
+def getHostName(url):
+	regex = "\w+\.\w+\.\w\w\w"
+	host = re.findall(regex,url)
+	return(host[0])
+	
+	
+	
+def main():
+	url_testA = "http://www.cnn.com/ads"
+	url_testB = "https://hacktoberfest.digitalocean.com/profile"
+	
+	print(getHostName(url_testA))
+	print(getHostName(url_testB))
+	
+main()
